@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+                                                                                                                                                       
+<record id="view_ex10_obj1_form" model="ir.ui.view">
+    <field name="name">ex10.obj1.form</field>
+    <field name="model">ex10.obj1</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <field name="name"/>
+            <field name="grade"/>
+            <field name="prefix"/>
+            <newline/>
+            <field name="obj1_line_ids"/>
+            <field name="m2mobj1_lines"/>
+        </form>
+    </field>
+</record>
+
+<record id="view_ex10_obj1_line_form" model="ir.ui.view">
+    <field name="name">ex10.obj1.line.form</field>
+    <field name="model">ex10.obj1.line</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <field name="name"/>
+            <field name="tax"/>
+            <field name="total"/>
+        </form>
+    </field>
+</record>
+
+<record id="view_ex10_obj3_form" model="ir.ui.view">
+    <field name="name">ex10.obj3.form</field>
+    <field name="model">ex10.obj3</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <field name="name"/>
+            <field name="surname"/>
+            <field name="expiry_date"/>
+            <newline/>
+            <field name="obj3_line_ids"/>
+        </form>
+    </field>
+</record>
+
+<record id="view_ex10_obj3_line_form" model="ir.ui.view">
+    <field name="name">ex10.obj3.line.form</field>
+    <field name="model">ex10.obj3.line</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <field name="name"/>
+        </form>
+    </field>
+</record>
+
+<record model="ir.actions.act_window" id="act_obj1">
+	<field name="name">Obj1</field>
+	<field name="res_model">ex10.obj1</field>
+	<field name="view_type">form</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="act_obj2">
+	<field name="name">Obj2</field>
+	<field name="res_model">ex10.obj2</field>
+	<field name="view_type">form</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="act_obj3">
+	<field name="name">Obj3</field>
+	<field name="res_model">ex10.obj3</field>
+	<field name="view_type">form</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<record model="ir.actions.act_window" id="act_obj3_line">
+	<field name="name">Obj3.line</field>
+	<field name="res_model">ex10.obj3.line</field>
+	<field name="view_type">form</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_root" name="Ex 10" sequence="0"/>
+<menuitem id="menu_obj1" parent="menu_root" action="act_obj1"/>
+<menuitem id="menu_obj2" parent="menu_root" action="act_obj2"/>
+<menuitem id="menu_obj3" parent="menu_root" action="act_obj3"/>
+<menuitem id="menu_obj3_line" parent="menu_root" action="act_obj3_line"/>
+
+</data>
+</openerp>

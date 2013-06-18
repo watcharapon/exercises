@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.Object">
+		<defaultValueExpression><![CDATA["addons/ex4_sub/reports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DS1" class="java.lang.Object"/>
+	<parameter name="DS2" class="java.lang.Object"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<variable name="sub1_return_value" class="java.lang.Integer"/>
+	<group name="group_id" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="65" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Name: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="40" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DS1">
+					<subreportParameterExpression><![CDATA[$P{DS1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS1}]]></dataSourceExpression>
+				<returnValue subreportVariable="sub1_return_sub" toVariable="sub1_return_value"/>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "report1_sub1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="40">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="40" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DS2">
+					<subreportParameterExpression><![CDATA[$P{DS2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$P{DS2}]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "report1_sub2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="50">
+			<textField>
+				<reportElement x="65" y="0" width="100" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{sub1_return_value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="65" height="20"/>
+				<textElement verticalAlignment="Bottom"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Total obj3"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

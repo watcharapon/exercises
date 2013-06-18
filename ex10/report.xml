@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<!--
+     use menu="0" to hiding the link's report according model that you map
+     -->
+<report id="ex10_obj1" string="Obj1" model="ex10.obj1" name="ex10.obj1" rml="ex10/reports/report1.jrxml"/>
+
+<report id="ex10_obj1_1" string="Obj1 (Copy)" model="ex10.obj1" name="ex10.obj1_1" rml="ex10/reports/report2.jrxml"/>
+
+<report id="ex10_obj1_rpt1" string="Obj1 RPT " model="ex10.obj1" name="ex10.obj1_rpt" rml="ex10/reports/rpt1.jrxml"/>
+
+</data>
+</openerp>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <report id="ex4_sub_obj1" string="Obj1" model="ex4.sub.obj1" name="ex4.sub.obj1" rml="ex4_sub/reports/report1.jrxml"/>
+</data>
+</openerp>

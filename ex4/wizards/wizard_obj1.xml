@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record model="ir.ui.view" id="wizard_obj1">
+	<field name="name">ex4.wizard.obj1</field>
+	<field name="model">wizard.obj1</field>
+	<field name="type">form</field>
+    <field name="arch" type="xml">
+        <form string="Wizard Obj1">
+            <field name="operator"/>
+            <field name="score"/>
+            <field name="date_print"/>
+            <group colspan="4" col="4">
+                <separator colspan="4" string=""/>
+                <label colspan="3" string=""/>
+                <button string="Print" name="button_print" type="object" icon="gtk-print" />
+            </group>
+        </form>
+    </field>
+</record>
+
+<act_window id="act_wizard_obj1" 
+        target="new"
+        res_model="wizard.obj1"
+        view_type="form" view_mode="form"
+        name="Wizard obj1" />
+<!--
+     adding menu's wizard after menu obj1
+     -->
+<menuitem id="menu_obj2" parent="menu_root" action="act_wizard_obj1"/>
+
+</data>
+</openerp>
+

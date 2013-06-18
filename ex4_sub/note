@@ -1,0 +1,10 @@
+sub report
+=====
+main report
+    - sub1
+        - obj1 + obj1_3_ids
+    - sub2
+        - obj2_ids
+=====
+OPENERP_RELATIONS : use to link with field many2one, one2many
+REWIND : ีuse to redraw item (+ filter report)

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="view_ex4_obj1_form" model="ir.ui.view">
+    <field name="name">ex4.obj1.form</field>
+    <field name="model">ex4.obj1</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <field name="name"/>
+            <field name="score"/>
+        </form>
+    </field>
+</record>
+
+<record id="view_ex4_obj1_tree" model="ir.ui.view">
+    <field name="name">ex4.obj1.tree</field>
+    <field name="model">ex4.obj1</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="score"/>
+        </tree>
+    </field>
+</record>
+
+<record model="ir.actions.act_window" id="act_obj1">
+	<field name="name">Obj1</field>
+	<field name="res_model">ex4.obj1</field>
+	<field name="view_type">form</field>
+	<field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_root" name="Ex4" sequence="0"/>
+<menuitem id="menu_obj1" parent="menu_root" action="act_obj1"/>
+
+</data>
+</openerp>
